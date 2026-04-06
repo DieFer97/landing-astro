@@ -1,0 +1,136 @@
+---
+import '@fontsource/inter/400.css';
+import '@fontsource/outfit/700.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Constituye tu empresa SAC o SRL en Perú de forma rápida, segura y 100% online. Asesoría legal especializada para emprendedores y MYPES." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="/" crossorigin />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --navy:     #0a1628;
+    --navy-mid: #112240;
+    --navy-lt:  #1d3461;
+    --green:    #2ecc71;
+    --green-dk: #27ae60;
+    --green-text: #4ade80;
+    --white:    #f0f4ff;
+    --gray:     #8892a4;
+    --border:   rgba(46,204,113,0.15);
+    
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+    --shadow-green: 0 0 20px rgba(46, 204, 113, 0.2);
+  }
+
+  *, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0; 
+  }
+
+  html { 
+    scroll-behavior: smooth; 
+  }
+
+  ::selection {
+    background-color: var(--green);
+    color: var(--navy);
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+  }
+
+  .btn:hover { 
+    transform: translateY(-3px);
+  }
+
+  .btn-primary {
+    background: var(--green);
+    color: var(--navy);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn-primary:hover {
+    box-shadow: var(--shadow-green);
+  }
+
+  .btn-outline {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--white);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-outline:hover { 
+    border-color: var(--green); 
+    color: var(--green); 
+    background: rgba(46, 204, 113, 0.05);
+  }
+
+  section { padding: 6rem 0; }
+
+	@font-face {
+  font-family: 'Inter';
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  font-display: optional;
+}
+</style>

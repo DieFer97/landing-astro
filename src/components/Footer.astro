@@ -1,0 +1,88 @@
+---
+const year: number = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="brand-section">
+      <a href="/" class="logo" aria-label="Ir a la página de inicio de SacsMype">
+        <span class="logo-icon">⚖️</span>
+        <span class="logo-text">Sacs<strong>Mype</strong></span>
+      </a>
+      <p class="copyright">© {year} SacsMype · Constitución de Empresas en Perú.</p>
+    </div>
+    
+    <nav>
+      <a href="#servicios" class="nav-link">Servicios</a>
+      <a href="#proceso" class="nav-link">Proceso</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem 0;
+    background: var(--navy);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .brand-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+
+  .logo strong { color: var(--green); }
+
+  .copyright { 
+    font-size: 0.85rem; 
+    color: var(--gray);
+  }
+
+  nav { 
+    display: flex; 
+    gap: 2rem; 
+  }
+
+  .nav-link { 
+    font-size: 0.9rem; 
+    color: var(--gray); 
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover { 
+    color: var(--white); 
+  }
+
+  @media (max-width: 600px) {
+    .footer-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    nav {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+</style>

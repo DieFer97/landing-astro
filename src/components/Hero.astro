@@ -1,0 +1,222 @@
+---
+---
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="grid-pattern"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+  </div>
+
+  <div class="container hero-content">
+    <div class="badge animate-up">
+      <span class="badge-dot"></span>
+      100% Online · Todo el Perú
+    </div>
+    
+    <h1 class="animate-up delay-1">
+      Constituye tu empresa<br />
+      <span class="text-gradient">SAC o SRL</span> en Perú
+    </h1>
+    
+    <p class="subtitle animate-up delay-2">
+      Asesoría legal especializada para emprendedores y MYPES. Estructuramos tu negocio de forma rápida, segura y sin complicaciones.
+    </p>
+    
+    <div class="hero-actions animate-up delay-3">
+      <a href="#contacto" class="btn btn-primary">Constituir mi empresa</a>
+      <a href="#proceso" class="btn btn-outline">¿Cómo funciona?</a>
+    </div>
+
+    <div class="hero-stats animate-up delay-4">
+      <div class="stat-card">
+        <strong>+500</strong>
+        <span>Empresas creadas</span>
+      </div>
+      <div class="stat-card">
+        <strong>7 días</strong>
+        <span>Tiempo promedio</span>
+      </div>
+      <div class="stat-card">
+        <strong>100%</strong>
+        <span>Garantía legal</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 0 4rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: var(--navy);
+  }
+
+  .grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+  }
+
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .glow-1 {
+    top: -10%;
+    right: -5%;
+    width: 500px;
+    height: 500px;
+    background: rgba(46, 204, 113, 0.15);
+  }
+
+  .glow-2 {
+    bottom: -10%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: rgba(29, 52, 97, 0.5);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(46,204,113,0.08);
+    border: 1px solid rgba(46,204,113,0.2);
+    color: var(--green-text);
+    padding: 0.4rem 1.2rem;
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--green);
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    color: var(--white);
+    margin-bottom: 1.2rem;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--green-text) 0%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    font-size: 1.15rem;
+    color: var(--gray);
+    margin-bottom: 2.8rem;
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.2rem 1.8rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(46,204,113,0.3);
+  }
+
+  .stat-card strong {
+    display: block;
+    font-size: 1.8rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+  }
+
+  .stat-card span {
+    font-size: 0.8rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+
+  .animate-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-stats {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .stat-card {
+      width: 100%;
+    }
+  }
+</style>

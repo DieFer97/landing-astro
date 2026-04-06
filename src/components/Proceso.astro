@@ -1,0 +1,210 @@
+---
+interface Paso {
+  numero: string;
+  titulo: string;
+  descripcion: string;
+}
+
+const pasos: Paso[] = [
+  {
+    numero: "01",
+    titulo: "Consulta gratuita",
+    descripcion: "Conversamos contigo para entender tu negocio y recomendarte el tipo societario más conveniente."
+  },
+  {
+    numero: "02",
+    titulo: "Preparación de documentos",
+    descripcion: "Redactamos la minuta de constitución, estatutos y todos los documentos legales necesarios."
+  },
+  {
+    numero: "03",
+    titulo: "Escritura pública",
+    descripcion: "Coordinamos la firma ante notario y la elevación a escritura pública de forma ágil."
+  },
+  {
+    numero: "04",
+    titulo: "Inscripción en SUNARP",
+    descripcion: "Registramos tu empresa en los Registros Públicos y obtenemos la partida registral."
+  },
+  {
+    numero: "05",
+    titulo: "RUC y activación",
+    descripcion: "Tramitamos tu RUC en SUNAT, elegimos el régimen tributario y tu empresa queda lista para operar."
+  }
+];
+---
+
+<section id="proceso" class="proceso">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Proceso Simplificado</span>
+      <h2>Constituye tu empresa<br />en 5 pasos simples</h2>
+      <p>Hemos optimizado cada etapa para que tu experiencia sea fluida, transparente y 100% digital.</p>
+    </div>
+
+    <div class="timeline-container">
+      {pasos.map((paso, i) => (
+        <div class="step-card">
+          <div class="step-indicator">
+            <div class="step-num">{paso.numero}</div>
+            {i < pasos.length - 1 && <div class="step-line"></div>}
+          </div>
+          <div class="step-content">
+            <h3>{paso.titulo}</h3>
+            <p>{paso.descripcion}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .proceso {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .proceso::before {
+    content: '';
+    position: absolute;
+    top: 20%; right: -10%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(46, 204, 113, 0.05), transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tag {
+    display: inline-block;
+    color: var(--green-text);
+    background: rgba(46, 204, 113, 0.1);
+    padding: 0.3rem 1rem;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--white);
+    margin-bottom: 1.2rem;
+  }
+
+  .section-header p {
+    color: var(--gray);
+    max-width: 540px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+  }
+
+  .timeline-container {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-card {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+  }
+
+  .step-card:hover .step-num {
+    background: var(--green);
+    color: var(--navy);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
+  }
+
+  .step-card:hover .step-content {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(46, 204, 113, 0.3);
+    transform: translateX(10px);
+  }
+
+  .step-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .step-num {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: rgba(10, 22, 40, 0.8);
+    border: 2px solid rgba(46, 204, 113, 0.4);
+    color: var(--green-text);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+  }
+
+  .step-line {
+    width: 2px;
+    flex: 1;
+    min-height: 50px;
+    background: linear-gradient(to bottom, rgba(46, 204, 113, 0.5), transparent);
+    margin: 8px 0;
+  }
+
+  .step-content {
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    flex: 1;
+    margin-bottom: 2.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+  }
+
+  .step-card:last-child .step-content {
+    margin-bottom: 0;
+  }
+
+  .step-content h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.6rem;
+  }
+
+  .step-content p {
+    font-size: 0.95rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .step-card { gap: 1rem; }
+    .step-num {
+      width: 44px;
+      height: 44px;
+      font-size: 1rem;
+    }
+    .step-content { padding: 1.5rem; }
+  }
+</style>

@@ -1,0 +1,84 @@
+---
+---
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="/" class="logo" aria-label="Ir a la página de inicio de SacsMype">
+      <span class="logo-icon">⚖️</span>
+      <span class="logo-text">Sacs<strong>Mype</strong></span>
+    </a>
+    <nav>
+      <a href="#servicios" class="nav-link">Servicios</a>
+      <a href="#proceso" class="nav-link">Proceso</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+      <a href="https://sacsmype.org.pe/" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-cta">
+        Empieza ahora
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10, 22, 40, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.4rem;
+    font-family: 'Outfit', sans-serif;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+
+  .logo strong { color: var(--green); }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .nav-link {
+    color: var(--gray);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--green);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover { color: var(--white); }
+  .nav-link:hover::after { width: 100%; }
+
+  .nav-cta {
+    padding: 0.6rem 1.5rem !important;
+    font-size: 0.9rem !important;
+  }
+</style>
